@@ -5,7 +5,7 @@ kramdown2629 ?= kramdown-rfc2629
 saxon ?= java -classpath $(saxpath) net.sf.saxon.Transform -novw -l
 rfc2629dir ?= lib\/
 
-NAME = bobsmith
+NAME = pranav
 TITLE = ${NAME}-$(shell basename ${CURDIR})
 VERSION = 01
 
