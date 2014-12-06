@@ -19,6 +19,8 @@ author:
     organization: Google
     email: pranavk@google.com
     uri: https://www.google.com/
+
+author:
  -
     ins: S Vijayakrishnan
     name: Siddharth Vijayakrishnan
