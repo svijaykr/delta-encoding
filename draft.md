@@ -98,6 +98,7 @@ This allows dictionaries to be defined on responses at both a domain and path le
   - Server chooses one of the "Delta-Bases" to compress the response.
 + Client advertises an expired resource as "Delta-Base"
   - Server uses the expired "Delta-Base" to compress the new response.
+
 ## Notational Conventions
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in {{RFC2119}}.
 
