@@ -94,6 +94,9 @@ This allows dictionaries to be defined on responses at both a domain and path le
 + Client advertises a "Delta-Base" in request. "Delta-Base" is pervious version of the same URL.
   - Server uses the base to compress the response. It also suggests it be used as "Delta-Base" for future requests.
   - Server uses the base in response, but does not suggest that it be used as future base. The base will not participate as a base in future requests.
++ Client advertises "Delta-Bases" from a different URL in request.
+  - Server chooses the "Delta-Bases" to compress the response.
+  - It marks the new response to serve as "Delta-Base" for future request. Now, both the old and new can serve as future base.
 + Client advertises multiple "Delta-Bases" from different URLs in request.
   - Server chooses one of the "Delta-Bases" to compress the response.
 + Client advertises an expired resource as "Delta-Base"
