@@ -88,9 +88,9 @@ This allows dictionaries to be defined on responses at both a domain and path le
  
 
 #Examples
-##Client does not have a cached "Delta-Base" for requested URL.
-####Server does not indicate use of the response in future requests.
-####Server indicates use of the response in future requests.
++Client does not have a cached "Delta-Base" for requested URL.
+  -Server does not indicate use of the response in future requests.
+  -Server indicates use of the response in future requests.
 ##
 ## Notational Conventions
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in {{RFC2119}}.
