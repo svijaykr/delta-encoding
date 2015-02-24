@@ -89,9 +89,15 @@ This allows dictionaries to be defined on responses at both a domain and path le
 
 #Examples
 + Client does not have a cached "Delta-Base" for requested URL.
-  - Server does not indicate use of the response in future requests.
-  - Server indicates use of the response in future requests.
-
+  - Server does not indicate use of the response as a "Delta-Base" in future requests.
+  - Server indicates use of the response as a "Delta-Base" for future requests. It also provides matching patterns.
++ Client advertises a "Delta-Base" in request. "Delta-Base" is pervious version of the same URL.
+  - Server uses the base to compress the response. It also suggests it be used as "Delta-Base" for future requests.
+  - Server uses the base in response, but does not suggest that it be used as future base. The base will not participate as a base in future requests.
++ Client advertises multiple "Delta-Bases" from different URLs in request.
+  - Server chooses one of the "Delta-Bases" to compress the response.
++ Client advertises an expired resource as "Delta-Base"
+  - Server uses the expired "Delta-Base" to compress the new response.
 ## Notational Conventions
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in {{RFC2119}}.
 
