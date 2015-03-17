@@ -20,6 +20,14 @@ author:
     email: pranavk@google.com
     uri: https://www.google.com/
 
+author:
+ -
+    ins: S Vijayakrishnan
+    name: Siddharth Vijayakrishnan
+    organization: Google
+    email: sidv@google.com
+    uri: https://www.google.com/
+
 normative:
   RFC2119:
   RFC5234:
@@ -78,6 +86,23 @@ This allows dictionaries to be defined on responses at both a domain and path le
 
 
  
+
+#Examples
++ Client does not have a cached "Delta-Base" for requested URL.
+  - Server does not indicate use of the response as a "Delta-Base" in future requests.
+  - Server indicates use of the response as a "Delta-Base" for future requests. It also provides matching patterns.
++ Client advertises a "Delta-Base" in request. "Delta-Base" is pervious version of the same URL.
+  - Server uses the base to compress the response. It also suggests it be used as "Delta-Base" for future requests.
+  - Server uses the base in response, but does not suggest that it be used as future base. The base will not participate as a base in future requests.
++ Client advertises "Delta-Bases" from a different URL in request.
+  - Server chooses the "Delta-Bases" to compress the response.
+  - It marks the new response to serve as "Delta-Base" for future request. Now, both the old and new can serve as future base.
++ Client advertises multiple "Delta-Bases" from different URLs in request.
+  - Server chooses one of the "Delta-Bases" to compress the response.
++ Client advertises an expired resource as "Delta-Base"
+  - Server uses the expired "Delta-Base" to compress the new response.
++ Client advertises multiple delta compression protocols in request
+  - Server chooses one protocol in response.
 
 ## Notational Conventions
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in {{RFC2119}}.
